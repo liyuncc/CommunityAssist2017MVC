@@ -21,13 +21,13 @@ namespace CommunityAssist2017MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "LastName, FirstName, Email, Phone, PlainPassword," +
-            "Apartment, Street, City, State, Zipcode")]NewPerson np)
+        public ActionResult Index([Bind(Include = "LastName, FirstName, Email, PlainPassword," +
+            "Apartment, Street, City, State, Zipcode, Phone")]NewPerson np)
           
         {
             Message m = new Message();
-            int result = db.usp_Register(np.LastName, np.FirstName, np.Email, np.Phone, np.PlainPassword,
-                np.Apartment, np.Street, np.City, np.State, np.Zipcode);
+            int result = db.usp_Register(np.LastName, np.FirstName, np.Email, np.PlainPassword,
+                np.Apartment, np.Street, np.City, np.State, np.Zipcode, np.Phone);
             if (result != -1)
             {
                 m.MessageText = "Thanks for registering! " + np.FirstName;

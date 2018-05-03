@@ -40,7 +40,7 @@ namespace CommunityAssist2017MVC.Controllers
                 msg.MessageText = "Welcome, " + lc.Email;
             }
             else
-                msg.MessageText = "Invalid Login. Please try again or register.";
+                msg.MessageText = "Invalid Login. Please try again or register first.";
             return View("Result", msg);
         }
         public ActionResult Result(Message msg)
