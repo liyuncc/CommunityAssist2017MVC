@@ -34,7 +34,7 @@ namespace CommunityAssist2017MVC.Controllers
             db.Donations.Add(d);
             db.SaveChanges();
 
-            Message m = new Message("Your donation is successfully accepted.");
+            Message m = new Message("Thank you very much for your donation!");
             return View("Result", m);
 
         }
